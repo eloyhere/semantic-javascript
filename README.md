@@ -19,13 +19,13 @@ No dependencies. Works in browsers and Node.js.
 ## Installation
 
 ```bash
-npm install semantic-js
+npm install semantic-javascript
 ```
 
 ```js
-import { Generative, Semantic } from 'semantic-js';
+import { Generative, Semantic } from 'semantic-javascript';
 // or
-const { Generative, Semantic } = require('semantic-js');
+const { Generative, Semantic } = require('semantic-javascript');
 ```
 
 ## Quick Start
