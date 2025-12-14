@@ -12,7 +12,7 @@ Most JavaScript iteration libraries focus on simple mapping and filtering. seman
 - **Built-in statistics** – mean, median, mode, variance, standard deviation, skewness, kurtosis, quartiles, and more – directly on streams.
 - **First-class windowing** – tumbling and sliding windows with aggregation, mapping, filtering, and more.
 - **Lazy evaluation** – operations are chained without immediate execution until a terminal operation is called.
-- **Parallel support** – configure concurrency with `.parallel(n)` (future-proofed for Promise.all-based execution).
+- **Parallel support** – configure concurrency with `.parallel(n)` and gets promise according to Promise.all.
 
 No dependencies. Works in browsers and Node.js.
 
