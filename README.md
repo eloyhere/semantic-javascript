@@ -1,10 +1,10 @@
-# semantic-js
+# semantic-javascript
 
 A modern, lazy, chainable JavaScript stream library with true semantic ordering, built-in statistical operations, tumbling/sliding windows, and optional parallel processing.
 
 Inspired by Java Streams and the author's own semantic-cpp, semantic-js brings a powerful, functional-style data processing pipeline to JavaScript – all in a lightweight, dependency-free package.
 
-## Why semantic-js?
+## Why semantic-javascript?
 
 Most JavaScript iteration libraries focus on simple mapping and filtering. semantic-js goes further by providing:
 
