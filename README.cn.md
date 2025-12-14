@@ -1,10 +1,10 @@
-# semantic-js
+# semantic-javascript
 
 一款现代、懒加载、可链式的 JavaScript 流处理库，支持真正的语义有序、内置统计操作、滚动/滑动窗口以及可选的并行处理。
 
-受 Java Streams 和作者自己的 semantic-cpp 启发，semantic-js 将强大的函数式数据处理管道带入 JavaScript —— 全部实现为轻量级、无依赖的包。
+受 Java Streams 和作者自己的 semantic-cpp 启发，semantic-javascript 将强大的函数式数据处理管道带入 JavaScript —— 全部实现为轻量级、无依赖的包。
 
-## 为什么选择 semantic-js？
+## 为什么选择 semantic-javascript？
 
 大多数 JavaScript 迭代库仅关注简单的映射和过滤。semantic-js 更进一步，提供：
 
@@ -19,13 +19,13 @@
 ## 安装
 
 ```bash
-npm install semantic-js
+npm install semantic-javascript
 ```
 
 ```js
-import { Generative, Semantic } from 'semantic-js';
+import { Generative, Semantic } from 'semantic-javascript';
 // 或
-const { Generative, Semantic } = require('semantic-js');
+const { Generative, Semantic } = require('semantic-javascript');
 ```
 
 ## 快速开始
