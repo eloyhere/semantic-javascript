@@ -212,7 +212,7 @@ const map = new Generative()
 | 无依赖                           | 支持        | 不支持     | 支持       | 不支持     | 支持                                 |
 | Optional 与 Collector 工具       | 不支持      | 不支持     | 不支持     | 不支持     | 支持                                 |
 
-semantic-js 通过将强大的统计和窗口功能与严格的语义有序结合，在轻量级包中脱颖而出。
+semantic-javascript 通过将强大的统计和窗口功能与严格的语义有序结合，在轻量级包中脱颖而出。
 
 ## 许可证
 
