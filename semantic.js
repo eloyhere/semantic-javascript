@@ -240,16 +240,9 @@ export class Collector {
 }
 
 export class Generative {
-  accept;
-  interrupter;
   
-  constructor(accept = (element, index) => {}, interrupter = (element) => false) {
-    this.accept = accept;
-    this.interrupter = interrupter;
-  }
-  
-  static of(accept, interrupter = (element) => false) {
-    return new Generative(accept, interrupter);
+  constructor() {
+    
   }
   
   empty() {
