@@ -1,99 +1,3 @@
-export const isNumber = (unknown) => {
-  return typeof(unknown) === "number" || unknown instanceof Number;
-}
-
-export const areAllNumbers = (unknowns) => {
-  if(isIterable(unknowns)){
-    for(const element of unknowns){
-      if(!isNumber(element)){
-        return false;
-      }
-    }
-    return true;
-  }
-  return isNumber(unknowns);
-}
-
-export const isString = (unknown) => {
-  return typeof(unknown) === "string" || unknown instanceof String;
-}
-
-export const areAllStrings = (unknowns) => {
-  if(isIterable(unknowns)){
-    for(const element of unknowns){
-      if(!isString(element)){
-        return false;
-      }
-    }
-    return true;
-  }
-  return isString(unknowns);
-}
-
-export const isBoolean = (unknown) => {
-  return typeof(unknown) === "boolean" || unknown instanceof Boolean;
-}
-
-export const areAllBooleans = (unknowns) => {
-  if(isIterable(unknowns)){
-    for(const element of unknowns){
-      if(!isBoolean(element)){
-        return false;
-      }
-    }
-    return true;
-  }
-  return isBoolean(unknowns);
-}
-
-export const isSymbol = (unknown) => {
-  return typeof(unknown) === "symbol";
-}
-
-export const areAllSymbols = (unknowns) => {
-  if(isIterable(unknowns)){
-    for(const element of unknowns){
-      if(!isSymbol(element)){
-        return false;
-      }
-    }
-    return true;
-  }
-  return isSymbol(unknowns);
-}
-
-export const isFunction = (unknown) => {
-  return typeof(unknown) === "function";
-}
-
-export const areAllFunctions = (unknowns) => {
-  if(isIterable(unknowns)){
-    for(const element of unknowns){
-      if(!isFunction(element)){
-        return false;
-      }
-    }
-    return true;
-  }
-  return isFunction(unknowns);
-}
-
-export const isObject = (unknown) => {
-  return typeof(unknown) === "object" && unknown !== null;
-}
-
-export const areAllObjects = (unknowns) => {
-  if(isIterable(unknowns)){
-    for(const element of unknowns){
-      if(!isObject(element)){
-        return false;
-      }
-    }
-    return true;
-  }
-  return isObject(unknowns);
-}
-
 export const validate = (unknown) => {
   return unknown !== (void 0) && unknown !== null;
 }
@@ -102,13 +6,205 @@ export const invalidate = (unknown) => {
   return unknown === (void 0) || unknown === null;
 }
 
-export const isIterable = (unknown) => {
-  if(isObject(unknown)){
-    return isFunction(unknown[Symbol.iterator]) || isFunction(unknown[Symbol.asyncIterator]);
+/**
+ * Checks whether all provided values are numbers.
+ * 
+ * @param {...any} args - Values to check.
+ * @returns {boolean} - Returns true if ALL provided values are numbers.
+ */
+export const isNumber = (...args) => {
+  if(args.length === 0){
+    return false;
+  }
+  let check = (unknown) => {
+    return typeof unknown === "number";
+  };
+  let unknowns = args.length === 1 ? args[0] : args;
+  if(isIterable(unknowns)){
+    if(unknowns.length === 0){
+      return false;
+    }
+    for(let unknown of unknowns){
+      if(!check(unknown)){
+        return false;
+      }
+    }
+    return true;
+  }
+  return check(unknowns);
+}
+
+/**
+ * Checks whether all provided values are strings
+ * 
+ * @param {...any} args - Values to check
+ * @returns {boolean} - Returns true if ALL provided values are strings
+ */
+export const isString = (...args) => {
+  if(args.length === 0){
+    return false;
+  }
+  let check = (unknown) => {
+    return typeof unknown === "string";
+  };
+  let unknowns = args.length === 1 ? args[0] : args;
+  if(isIterable(unknowns)){
+    if(unknowns.length === 0){
+      return false;
+    }
+    for(let unknown of unknowns){
+      if(!check(unknown)){
+        return false;
+      }
+    }
+    return true;
+  }
+  return check(unknowns);
+}
+
+/**
+ * Checks whether all provided values are booleans
+ * 
+ * @param {...any} args - Values to check
+ * @returns {boolean} - Returns true if ALL provided values are booleans
+ */
+export const isBoolean = (...args) => {
+  if(args.length === 0){
+    return false;
+  }
+  let check = (unknown) => {
+    return typeof unknown === "boolean";
+  };
+  let unknowns = args.length === 1 ? args[0] : args;
+  if(isIterable(unknowns)){
+    if(unknowns.length === 0){
+      return false;
+    }
+    for(let unknown of unknowns){
+      if(!check(unknown)){
+        return false;
+      }
+    }
+    return true;
+  }
+  return check(unknowns);
+}
+
+/**
+ * Checks whether all provided values are symbols
+ * 
+ * @param {...any} args - Values to check
+ * @returns {boolean} - Returns true if ALL provided values are symbols
+ */
+export const isSymbol = (...args) => {
+  if(args.length === 0){
+    return false;
+  }
+  let check = (unknown) => {
+    return typeof unknown === "symbol";
+  };
+  let unknowns = args.length === 1 ? args[0] : args;
+  if(isIterable(unknowns)){
+    if(unknowns.length === 0){
+      return false;
+    }
+    for(let unknown of unknowns){
+      if(!check(unknown)){
+        return false;
+      }
+    }
+    return true;
+  }
+  return check(unknowns);
+}
+
+/**
+ * Checks whether all provided values are functions
+ * 
+ * @param {...any} args - Values to check
+ * @returns {boolean} - Returns true if ALL provided values are functions
+ */
+export const isFunction = (...args) => {
+  if(args.length === 0){
+    return false;
+  }
+  let check = (unknown) => {
+    return typeof unknown === "function";
+  };
+  let unknowns = args.length === 1 ? args[0] : args;
+  if(isIterable(unknowns)){
+    if(unknowns.length === 0){
+      return false;
+    }
+    for(let unknown of unknowns){
+      if(!check(unknown)){
+        return false;
+      }
+    }
+    return true;
+  }
+  return check(unknowns);
+}
+
+/**
+ * Checks whether all provided values are objects (and not null)
+ * 
+ * @param {...any} args - Values to check
+ * @returns {boolean} - Returns true if ALL provided values are objects
+ */
+export const isObject = (...args) => {
+  if(args.length === 0){
+    return false;
+  }
+  let check = (unknown) => {
+    return typeof unknown === "object" && unknown !== null;
+  };
+  let unknowns = args.length === 1 ? args[0] : args;
+  if(isIterable(unknowns)){
+    if(unknowns.length === 0){
+      return false;
+    }
+    for(let unknown of unknowns){
+      if(!check(unknown)){
+        return false;
+      }
+    }
+    return true;
+  }
+  return check(unknowns);
+}
+
+/**
+ * Checks whether all provided values are iterable.
+ * 
+ * @param {...any} args - Values to check.
+ * @returns {boolean} - Returns true if ALL provided values are iterable.
+ */
+export const isIterable = (...args) => {
+  if(args.length === 0){
+    return false;
+  }
+  const isObject = (unknown) => {
+    return typeof unknown === "object" && unknown !== null;
+  };
+  const isFunction = (unknown) => {
+    return typeof unknown === "function";
+  };
+  const check = (unknowns) => {
+    return validate(unknowns) && isFunction(Reflect.get(unknowns, Symbol.iterator));
+  };
+  let unknowns = args.length === 1 ? args[0] : args;
+  if(check(unknowns)){
+    for(let unknown of unknowns){
+      if(!check(unknown)){
+        return false;
+      }
+    }
+    return true;
   }
   return false;
 }
-
+  
 export class Optional {
   #value;
   
